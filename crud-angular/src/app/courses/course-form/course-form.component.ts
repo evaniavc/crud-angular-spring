@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { UntypedFormBuilder, UntypedFormGroup } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 import { Location } from '@angular/common';
@@ -14,9 +14,9 @@ import { CoursesService } from '../services/courses.service';
 
 export class CourseFormComponent implements OnInit {
 
-  form: FormGroup;
+  form: UntypedFormGroup;
 
-  constructor(private formBuilder: FormBuilder,
+  constructor(private formBuilder: UntypedFormBuilder,
     private service: CoursesService,
     private snackBar: MatSnackBar,
     private location: Location) {
@@ -39,7 +39,7 @@ export class CourseFormComponent implements OnInit {
   }
 
   private onSuccess() {
-    this.snackBar.open('Curso salva com sucesso!', '', { duration: 5000 });
+    this.snackBar.open('Curso salvo com sucesso!', '', { duration: 5000 });
     this.onCancel();
   }
 
